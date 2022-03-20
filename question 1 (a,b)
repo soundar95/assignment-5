@@ -1,0 +1,37 @@
+//question (a) Print odd numbers in an array anonymous function
+const array1 = [4, 6, 10, 18, 19, 21];
+let myFunction = function (arr) {
+  let b = arr.filter((a) => a % 2 === 1);
+  return b;
+};
+console.log(myFunction(array1));
+
+//IIFE function
+(function (arr1) {
+  let b = arr1.filter((a) => a % 2 === 1);
+  console.log(b);
+})([55,66,77,88,101]);
+
+//question (b) Convert all the strings to title caps in a string array
+let strcaps = function (str) {
+  str = str.toLowerCase().split(" ");
+  for (let i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  console.log(str.join(" "));
+};
+strcaps("im the best");
+// IIFE function
+(function (str1) {
+  str1 = str1.toLowerCase().split(" ");
+  for (let i = 0; i < str1.length; i++) {
+    str1[i] = str1[i].charAt(0).toUpperCase() + str1[i].slice(1);
+  }
+  console.log(str1.join(" "));
+})("he is good");
+
+/*output
+[19, 21]
+script.js:12 (3) [55, 77, 101]
+script.js:21 Im The Best
+script.js:30 He Is Good */
