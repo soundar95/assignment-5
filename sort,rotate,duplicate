@@ -1,0 +1,63 @@
+// question 1(e) Return all the palindromes in an array
+const arr = [500, "mom","dad", 444,123];
+
+let ispalindrom = function(item){
+    let str  =  String(item);
+    let i = 0;
+    let j = str.length-1
+    while(i<j){
+        if(str[i]==str[j]){
+            i++;
+            j--;
+        }
+        else{
+            return false;
+        }
+    }
+    console.log(str);
+    };
+let findpalindrome = function(arr){
+    return arr.filter(item =>ispalindrom(item));
+};
+findpalindrome(arr);
+
+// question 1(f) Remove duplicates from an array anonymous  function
+
+let duplicate = function(arr){
+    let uniqueArray = arr.filter(function(item, pos) {
+         return arr.indexOf(item) == pos;
+     })
+     console.log(uniqueArray)
+ }
+ duplicate([9,9,8,7,7,5]);
+ 
+ //  IIFE  function
+ 
+ (function(arr1){
+     let uniqueArray1 = arr1.filter(function(item, pos) {
+          return arr1.indexOf(item) == pos;
+      })
+      console.log(uniqueArray1)
+  })([1,,2,3,4,5,5,6]);
+
+  //question 1(g) Rotate an array by k times
+  const rotateArray = function(nums, k) {
+    // reverse function
+    function reverse(arr, start, end) {
+      while (start < end) {
+        [arr[start], arr[end]] = [arr[end], arr[start]];
+        start++;
+        end--;
+      }
+    }
+  
+    k %= nums.length;
+  
+    reverse(nums, 0, (nums.length - 1));
+    reverse(nums, 0, (k - 1));
+    reverse(nums, k, (nums.length - 1));
+  
+    return nums;
+  }
+  let arr1 =rotateArray([1,2,3,4,5],1)
+  console.log(arr1);
