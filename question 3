@@ -1,0 +1,43 @@
+//sort using arrow function
+const arr = [4, 6, 10, 18, 19, 21];
+const sort1=arr => {
+  let b = arr.filter((a) => a % 2 === 1);
+  return b;
+};
+console.log(sort1(arr));
+
+//Convert all the strings to title caps in a string array
+let strcaps = str =>{
+    str = str.toLowerCase().split(" ");
+    for (let i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    console.log(str.join(" "));
+  };
+  strcaps("im the best");
+
+  //Sum of all numbers in an array
+  let num = [1, 2, 3, 4, 5];
+let sum = sum1 =>{
+  let c = sum1.reduce((start, end) => start + end);
+  return c;
+};
+console.log(sum(num));
+
+//Return all the prime numbers in an array
+let primenum =(arr3) => {
+    arr3 = arr3.filter((num2) => {
+      for (i = 2; i <= Math.sqrt(num2); i++) {
+        if (num2 % i === 0) return false;
+        else return true;
+      }
+    });
+    console.log(arr3);
+  };
+  primenum([6, 7, 8, 9, 10, 11]);
+
+/*output
+[19, 21]
+Im The Best
+15
+[7, 9, 11]*/
